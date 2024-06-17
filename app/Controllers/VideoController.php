@@ -9,17 +9,30 @@ use CodeIgniter\Controller;
 class VideoController extends BaseController
 {
     public function index()
-{
-    $videoModel = new VideoModel();
-    $episodeModel = new EpisodeModel();
+    {
+        $videoModel = new VideoModel();
+        $episodeModel = new EpisodeModel();
 
-    $videos = $videoModel->findAll();
-    foreach ($videos as &$video) {
-        $video['episodes'] = $episodeModel->where('video_id', $video['id'])->findAll();
+        $videos = $videoModel->findAll();
+        foreach ($videos as &$video) {
+            $video['episodes'] = $episodeModel->where('video_id', $video['id'])->findAll();
+        }
+
+        return view('admin/videos/index', ['videos' => $videos]);
     }
 
-    return view('admin/videos/index', ['videos' => $videos]);
-}
+    public function search()
+    {
+        $videoModel = new VideoModel();
+        $searchQuery = $this->request->getGet('q');
+
+        $videos = [];
+        if (!empty($searchQuery)) {
+            $videos = $videoModel->like('title', $searchQuery)->findAll();
+        }
+
+        return view('admin/videos/search', ['videos' => $videos, 'query' => $searchQuery]);
+    }
 
     public function create()
     {
@@ -61,7 +74,6 @@ class VideoController extends BaseController
 
         return view('user/watching', [ 'video' => $video, 'episodes' => $episodes]);
     }
-    
 
     public function store()
     {

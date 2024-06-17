@@ -71,7 +71,7 @@
                         <nav class="header__menu mobile-menu">
                             <ul>
                                 <li class="active"><a href="<?= base_url() ?>">Homepage</a></li>
-                                <li><a href="<?= base_url('categories') ?>">Categories <span class="arrow_carrot-down"></span></a>
+                                <!--<li><a href="<?= base_url('categories') ?>">Categories <span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
                                         <li><a href="<?= base_url('categories') ?>">Categories</a></li>
                                         <li><a href="<?= base_url('anime-details') ?>">Anime Details</a></li>
@@ -80,7 +80,7 @@
                                         <li><a href="<?= base_url('signup') ?>">Sign Up</a></li>
                                         <li><a href="<?= base_url('login') ?>">Login</a></li>
                                     </ul>
-                                </li>
+                                </li>-->
                                 <li><a href="<?= base_url('blog') ?>">Our Blog</a></li>
                                 <li><a href="<?= base_url('contacts') ?>">Contacts</a></li>
                             </ul>
@@ -93,7 +93,7 @@
                         <a href="<?= base_url('login') ?>"><span class="icon_profile"></span><?php if (isset($user) && $user): ?><?= $user['username']; ?><?php else: ?><?= user() ? user()->username : 'Guest'; ?><?php endif; ?></a>
                         
                         
-                        <a href="<?= base_url('logout') ?>"><i class="fas fa-sign-out-alt fa-sm fa-fw text-gray-400"></i>Logout</a>
+                        <!--<a href="<?= base_url('logout') ?>"><i class="fas fa-sign-out-alt fa-sm fa-fw text-gray-400"></i>Logout</a>-->
                         
                     </div>
                 </div>
@@ -141,8 +141,8 @@
     <div class="search-model">
         <div class="h-100 d-flex align-items-center justify-content-center">
             <div class="search-close-switch"><i class="icon_close"></i></div>
-            <form class="search-model-form">
-                <input type="text" id="search-input" placeholder="Search here.....">
+            <form class="search-model-form" action="<?= base_url('search') ?>" method="get">
+                <input type="text" id="search-input" name="q" placeholder="Search here.....">
             </form>
         </div>
     </div>

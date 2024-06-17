@@ -29,7 +29,7 @@ form h1 {
 .form-control-file,
 .form-control select {
     width: 100%;
-    padding: 10px;
+    padding: 8px;
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -82,6 +82,12 @@ form h1 {
     list-style-type: none;
 }
 
+/* Center the h3 text */
+.form-header {
+        text-align: center;
+        margin-bottom: 20px;
+}
+
 @media (max-width: 768px) {
     form {
         padding: 15px;
@@ -89,7 +95,9 @@ form h1 {
 }
 </style>
 
-<h3 class="h3 mb-4 text-gray-800">Add New Videos</h3>
+<div class="form-header">
+    <h3 class="h3 mb-4 text-gray-800">Add New Videos</h3>
+</div>
 
 <?php if (isset($errors) && !empty($errors)): ?>
     <div class="alert alert-danger">

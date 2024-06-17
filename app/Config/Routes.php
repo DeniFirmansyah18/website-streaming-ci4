@@ -22,6 +22,14 @@ $routes->get('/watching', 'User::watching');
 
 $routes->get('video/watching/(:num)', 'VideoController::watching/$1');
 
+//category
+$routes->get('/category', 'User::category');
+
+$routes->get('category/(:any)', 'VideoController::category/$1');
+
+//search
+$routes->get('search', 'VideoController::search');
+
 //admin profile list
 $routes->get('/admin', 'Admin::index', ['filter' => 'role:admin']);
 

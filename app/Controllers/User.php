@@ -46,4 +46,18 @@ class User extends BaseController
 
         return view('user/watching', $data);
     }
+
+    public function category()
+    {
+        $model = new VideoModel();
+        $data['videos'] = $model->findAll();
+
+        if (session()->has('isLoggedIn')) {
+            $data['user'] = session()->get('user');
+        } else {
+            $data['user'] = null;
+        }
+
+        return view('user/category', $data);
+    }
 }

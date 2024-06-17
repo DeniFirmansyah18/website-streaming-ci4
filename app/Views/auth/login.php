@@ -4,14 +4,14 @@
 
 <body>
     <!-- Normal Breadcrumb Begin -->
-    <section class="normal-breadcrumb set-bg" data-setbg="<?= base_url('img/normal-breadcrumb.jpg') ?>">
+    <section class="normal-breadcrumb set-bg" data-setbg="<?= base_url('img/banner.jpg') ?>">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <?= view('Myth\Auth\Views\_message_block') ?>
                     <div class="normal__breadcrumb__text">
-                        <h2>Login</h2>
-                        <p>Welcome to the official Anime blog.</p>
+                        <h2 style="color:#e53637;">Login</h2>
+                        <p>Welcome to the Zenflix Streaming</p>
                     </div>
                 </div>
             </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Waktu pembuatan: 14 Jun 2024 pada 10.29
+-- Waktu pembuatan: 23 Jun 2024 pada 15.41
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -93,7 +93,8 @@ CREATE TABLE `auth_groups_users` (
 --
 
 INSERT INTO `auth_groups_users` (`group_id`, `user_id`) VALUES
-(1, 7);
+(1, 7),
+(1, 10);
 
 -- --------------------------------------------------------
 
@@ -154,7 +155,20 @@ INSERT INTO `auth_logins` (`id`, `ip_address`, `email`, `user_id`, `date`, `succ
 (37, '::1', 'admin@gmail.com', 7, '2024-06-09 03:35:38', 1),
 (38, '::1', 'admin@gmail.com', 7, '2024-06-09 12:40:45', 1),
 (39, '::1', 'admin@gmail.com', 7, '2024-06-12 13:43:57', 1),
-(40, '::1', 'admin@gmail.com', 7, '2024-06-13 11:48:12', 1);
+(40, '::1', 'admin@gmail.com', 7, '2024-06-13 11:48:12', 1),
+(41, '::1', 'admin@gmail.com', 7, '2024-06-14 10:59:56', 1),
+(42, '::1', 'admin@gmail.com', 7, '2024-06-16 12:31:37', 1),
+(43, '::1', 'admin@gmail.com', 7, '2024-06-16 13:05:34', 1),
+(44, '::1', 'user@gmail.com', NULL, '2024-06-16 14:33:01', 0),
+(45, '::1', 'indhira@gmail.com', 6, '2024-06-16 14:33:14', 1),
+(46, '::1', 'admin@gmail.com', 7, '2024-06-17 01:59:22', 1),
+(47, '::1', 'admin@gmail.com', 7, '2024-06-17 10:56:41', 1),
+(48, '::1', 'admin@gmail.com', 7, '2024-06-17 15:19:03', 1),
+(49, '::1', 'admin@gmail.com', 7, '2024-06-23 04:10:42', 1),
+(50, '::1', 'admin123@gmail.com', 10, '2024-06-23 07:15:10', 1),
+(51, '::1', 'admin123@gmail.com', 10, '2024-06-23 12:31:03', 1),
+(52, '::1', 'user123@gmail.com', NULL, '2024-06-23 13:05:53', 0),
+(53, '::1', 'user@gmail.com', 11, '2024-06-23 13:06:17', 1);
 
 -- --------------------------------------------------------
 
@@ -235,8 +249,18 @@ CREATE TABLE `episodes` (
 --
 
 INSERT INTO `episodes` (`id`, `video_id`, `episode_number`, `title`, `url`) VALUES
-(1, 9, 1, 'Episode 1.1', 'https://hxfile.co/m5x1r6grvmmy\" target=_blank>NGEFILM21.PW.Parasyte.The.Grey.S01E01.1080p.mp4 - 934092788'),
-(2, 10, 1, 'Godzilla x Kong: The New Empire', 'https://hxfile.co/embed-lljejaevlmju.html');
+(4, 10, 1, 'Godzilla x Kong: The New Empire', 'https://hxfile.co/embed-lljejaevlmju.html'),
+(5, 9, 1, 'Episode 1.1', 'https://hxfile.co/embed-m5x1r6grvmmy.html'),
+(7, 9, 2, 'Episode 1.2', 'https://hxfile.co/embed-4i3dpbdl57ve.html'),
+(8, 9, 3, 'Episode 1.3', 'https://hxfile.co/embed-dxz4rnmznk3u.html'),
+(9, 9, 4, 'Episode 1.4', 'https://hxfile.co/embed-7zzr7yraqgch.html'),
+(10, 9, 5, 'Episode 1.5', 'https://hxfile.co/embed-q43ecgfdqnfy.html'),
+(11, 9, 6, 'Episode 1.6', 'https://hxfile.co/embed-f55x5evyathb.html'),
+(12, 11, 1, 'Black Clover: Sword of the Wizard King', 'https://streamtape.com/e/1b49lW3DoGTekp0/'),
+(13, 12, 1, 'Jujutsu Kaisen Zero', 'https://pixeldrain.com/u/gQEqK87B?embed'),
+(14, 13, 1, 'Agak Laen', 'https://streamtape.com/e/OkGkroAXmYC6D6/'),
+(17, 15, 1, 'Episode 2.1', 'https://streamtape.com/e/eA6ORKQQ7luYgQZ/'),
+(25, 15, 2, 'Episode 2.2', 'https://mega.nz/embed/hi9U1CCJ#xABzs5nmv5squSLw9BKCxBZCfGbCXvsofoy5TBguZ0w');
 
 -- --------------------------------------------------------
 
@@ -292,9 +316,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `username`, `user_image`, `password_hash`, `reset_hash`, `reset_at`, `reset_expires`, `activate_hash`, `status`, `status_message`, `active`, `force_pass_reset`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(6, 'indhira@gmail.com', 'indhira123', '', '$2y$10$LL7Ekcxs8PPUIUweR0oUGe2ytAh8i2elAMIbwtvlE.Uj88eXPDnt6', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2024-05-29 12:24:50', '2024-05-29 12:24:50', NULL),
 (7, 'admin@gmail.com', 'admin', '', '$2y$10$UsI0jL9mhjJfs7IZk7YkcOMK4ystPVZFo5xl.2W/vEYsLdVtrjdNG', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2024-05-31 08:18:03', '2024-05-31 08:18:03', NULL),
-(9, 'bukanuser@gmail.com', 'bukanuser', 'default.svg', '$2y$10$mlInj0CtCna4.XiTyrdj5ep0qqDZib6dIJ3VUBCFD0VZNb4NnGrJO', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2024-06-07 03:43:31', '2024-06-07 03:44:11', NULL);
+(10, 'admin123@gmail.com', 'admin123', '', '$2y$10$WGLg2lIrs8/tloVEu512uuESk1FLp3X9g74AEelleVwD3zSO0KIZe', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2024-06-23 07:09:54', '2024-06-23 07:09:54', NULL),
+(11, 'user@gmail.com', 'user123', 'default.svg', '$2y$10$YF/8Mh0q6EXExSm/Fdk0tuFtteHIoaGtrQ/rj9.Yq9d99GDoR6Ga.', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2024-06-23 13:05:36', '2024-06-23 13:05:36', NULL);
 
 -- --------------------------------------------------------
 
@@ -321,7 +345,11 @@ CREATE TABLE `videos` (
 
 INSERT INTO `videos` (`id`, `title`, `description`, `thumbnail`, `backdrop`, `video_type`, `year`, `genre`, `duration`, `video_quality`) VALUES
 (9, 'Parasyte: The Grey', 'A group of humans wage war against the rising evil of unidentified parasitic life-forms that live off of human hosts and strive to grow their power', 'http://localhost:8080//images/1718284633_49ab1303cdc0690ab999.jpg', 'http://localhost:8080//images/1718284633_5f1b3678b3b5089389ed.jpg', 'series', 2024, 'Horror', 60, '1080p'),
-(10, 'Godzilla x Kong: The New Empire', 'Two ancient titans, Godzilla and Kong, clash in an epic battle as humans unravel their intertwined origins and connection to Skull Island\'s mysteries.', 'http://localhost:8080//images/1718288385_6f00bdcc0fd06c63459c.jpg', 'http://localhost:8080//images/1718288385_f7e9d78a28f54a4a0bbf.jpg', 'movie', 2024, 'Action', 120, '1080p');
+(10, 'Godzilla x Kong: The New Empire', 'Two ancient titans, Godzilla and Kong, clash in an epic battle as humans unravel their intertwined origins and connection to Skull Island\'s mysteries.', 'http://localhost:8080//images/1718288385_6f00bdcc0fd06c63459c.jpg', 'http://localhost:8080//images/1718639668_1153d94a3559a11a8b31.jpg', 'movie', 2024, 'Action', 120, '1080p'),
+(11, 'Black Clover: Sword of the Wizard King', 'In a world where magic is everything, Asta, a boy who was born with no magic, aims to become the \"Wizard King\" to overcome adversity, prove his power, and keep his oath with his friends.', 'http://localhost:8080//images/1718626108_66ce98673e81b15851a0.jpg', 'http://localhost:8080//images/1718640137_ef6082a4197dab637bb4.jpg', 'movie', 2023, 'Action', 120, '720p'),
+(12, 'Jujutsu Kaisen Zero', 'The prequel to Jujutsu Kaisen (2020), where a high schooler gains control of an extremely powerful cursed spirit and gets enrolled in the Tokyo Prefectural Jujutsu High School by Jujutsu Sorcerers.', 'http://localhost:8080//images/1718626728_9e4b52f1e4335aaf5df6.jpg', 'http://localhost:8080//images/1718639718_a4db37b7f69308a6f96f.jpg', 'movie', 2021, 'Action', 105, '1080p'),
+(13, 'Agak Laen', 'Empat petugas rumah hantu bernama Boris, Jegel, Bene, dan Oki. Dikisahkan bahwa keempatnya bertugas sebagai hantu yang menakut-nakuti pengunjung rumah hantu yang ada di sebuah pasar malam.', 'http://localhost:8080//images/1718640706_6f59b962663e9f677891.jpg', 'http://localhost:8080//images/1718640706_50233d6b15e57a119999.jpg', 'movie', 2024, 'Komedi', 119, '720p'),
+(15, 'Alice in Borderland S2', 'Obsessed gamer Arisu suddenly finds himself in a strange, emptied-out version of Tokyo in which he and his friends must compete in dangerous games in order to survive.', 'http://localhost:8080//images/1719147264_d1d597be6a3df79aec8a.jpg', 'http://localhost:8080//images/1719147264_fb29569cfa675f042917.jpg', 'series', 2022, 'Action', 50, '720p');
 
 --
 -- Indexes for dumped tables
@@ -435,7 +463,7 @@ ALTER TABLE `auth_groups`
 -- AUTO_INCREMENT untuk tabel `auth_logins`
 --
 ALTER TABLE `auth_logins`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT untuk tabel `auth_permissions`
@@ -459,7 +487,7 @@ ALTER TABLE `auth_tokens`
 -- AUTO_INCREMENT untuk tabel `episodes`
 --
 ALTER TABLE `episodes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT untuk tabel `migrations`
@@ -471,13 +499,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT untuk tabel `videos`
 --
 ALTER TABLE `videos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

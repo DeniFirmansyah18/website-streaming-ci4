@@ -12,6 +12,12 @@ $routes->get('/register', 'Home::register');
 //user
 $routes->get('/', 'User::index');
 
+//blog
+$routes->get('/blog', 'User::blog');
+
+//warning
+$routes->get('/warning', 'User::warning');
+
 //detail video
 $routes->get('/detail', 'User::detail');
 
@@ -23,9 +29,9 @@ $routes->get('/watching', 'User::watching');
 $routes->get('video/watching/(:num)', 'VideoController::watching/$1');
 
 //category
-$routes->get('/category', 'User::category');
+//$routes->get('/category', 'User::category');
 
-$routes->get('category/(:any)', 'VideoController::category/$1');
+//$routes->get('category/(:any)', 'VideoController::category/$1');
 
 //search
 $routes->get('search', 'VideoController::search');

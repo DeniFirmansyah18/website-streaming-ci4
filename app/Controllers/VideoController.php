@@ -85,12 +85,10 @@ class VideoController extends BaseController
         $validation->setRules([
             'title' => 'required',
             'description' => 'required',
-            'thumbnail' => 'uploaded[thumbnail]',
-            'backdrop' => 'uploaded[backdrop]',
             'video_type' => 'required',
-            'year' => 'required|numeric',
+            'year' => 'required',
             'genre' => 'required',
-            'duration' => 'required|numeric',
+            'duration' => 'required',
             'video_quality' => 'required',
             'episode_titles' => 'required',
             'episode_urls' => 'required'
@@ -179,11 +177,9 @@ class VideoController extends BaseController
         $validation->setRules([
             'title' => 'required',
             'description' => 'required',
-            'video_type' => 'required',
-            'year' => 'required|numeric',
+            'year' => 'required',
             'genre' => 'required',
-            'duration' => 'required|numeric',
-            'video_quality' => 'required'
+            'duration' => 'required'
         ]);
 
         if (!$validation->withRequest($this->request)->run()) {

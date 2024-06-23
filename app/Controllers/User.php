@@ -47,7 +47,7 @@ class User extends BaseController
         return view('user/watching', $data);
     }
 
-    public function category()
+    public function blog()
     {
         $model = new VideoModel();
         $data['videos'] = $model->findAll();
@@ -58,6 +58,20 @@ class User extends BaseController
             $data['user'] = null;
         }
 
-        return view('user/category', $data);
+        return view('user/blog', $data);
+    }
+
+    public function warning()
+    {
+        $model = new VideoModel();
+        $data['videos'] = $model->findAll();
+
+        if (session()->has('isLoggedIn')) {
+            $data['user'] = session()->get('user');
+        } else {
+            $data['user'] = null;
+        }
+
+        return view('layouts/warning', $data);
     }
 }

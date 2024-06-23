@@ -100,25 +100,27 @@ form h1 {
     <h3 class="h3 mb-4 text-gray-800">Edit Videos</h3>
 </div>
 
-<?php if (isset($errors) && !empty($errors)): ?>
-    <div class="alert alert-danger">
-        <?php foreach ($errors as $error): ?>
-            <li><?= esc($error); ?></li>
-        <?php endforeach; ?>
-    </div>
-<?php endif; ?>
-
 <form action="/admin/videos/update/<?= $video['id'] ?>" method="POST" enctype="multipart/form-data">
     <?= csrf_field(); ?>
 
     <div class="form-group">
         <label for="title">Title:</label>
-        <input type="text" class="form-control" id="title" name="title" value="<?= esc($video['title']); ?>">
+        <input type="text" class="form-control <?= isset(session('errors')['title']) ? 'is-invalid' : ''; ?>" id="title" name="title" value="<?= old('title', $video['title']); ?>">
+        <?php if (isset(session('errors')['title'])): ?>
+            <div class="invalid-feedback">
+                <?= esc(session('errors')['title']); ?>
+            </div>
+        <?php endif; ?>
     </div>
 
     <div class="form-group">
         <label for="description">Description:</label>
-        <textarea class="form-control" id="description" name="description"><?= esc($video['description']); ?></textarea>
+        <textarea class="form-control <?= isset(session('errors')['description']) ? 'is-invalid' : ''; ?>" id="description" name="description"><?= old('description', $video['description']); ?></textarea>
+        <?php if (isset(session('errors')['description'])): ?>
+            <div class="invalid-feedback">
+                <?= esc(session('errors')['description']); ?>
+            </div>
+        <?php endif; ?>
     </div>
 
     <div class="form-group">
@@ -148,17 +150,32 @@ form h1 {
 
     <div class="form-group">
         <label for="year">Year:</label>
-        <input type="number" class="form-control" id="year" name="year" value="<?= old('year', $video['year']); ?>">
+        <input type="text" class="form-control <?= isset(session('errors')['year']) ? 'is-invalid' : ''; ?>" id="year" name="year" value="<?= old('year', $video['year']); ?>">
+        <?php if (isset(session('errors')['year'])): ?>
+            <div class="invalid-feedback">
+                <?= esc(session('errors')['year']); ?>
+            </div>
+        <?php endif; ?>
     </div>
 
     <div class="form-group">
         <label for="genre">Genre:</label>
-        <input type="text" class="form-control" id="genre" name="genre" value="<?= old('genre', $video['genre']); ?>">
+        <input type="text" class="form-control <?= isset(session('errors')['genre']) ? 'is-invalid' : ''; ?>" id="genre" name="genre" value="<?= old('genre', $video['genre']); ?>">
+        <?php if (isset(session('errors')['genre'])): ?>
+            <div class="invalid-feedback">
+                <?= esc(session('errors')['genre']); ?>
+            </div>
+        <?php endif; ?>
     </div>
 
     <div class="form-group">
         <label for="duration">Duration (minutes):</label>
-        <input type="number" class="form-control" id="duration" name="duration" value="<?= old('duration', $video['duration']); ?>">
+        <input type="text" class="form-control  <?= isset(session('errors')['duration']) ? 'is-invalid' : ''; ?>" id="duration" name="duration" value="<?= old('duration', $video['duration']); ?>">
+        <?php if (isset(session('errors')['duration'])): ?>
+            <div class="invalid-feedback">
+                <?= esc(session('errors')['duration']); ?>
+            </div>
+        <?php endif; ?>
     </div>
 
     <div class="form-group">

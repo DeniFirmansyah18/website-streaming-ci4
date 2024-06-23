@@ -70,7 +70,7 @@
                     <div class="header__nav">
                         <nav class="header__menu mobile-menu">
                             <ul>
-                                <li class="active"><a href="<?= base_url() ?>">Homepage</a></li>
+                                <li class="active"><a href="<?= base_url('/') ?>">Homepage</a></li>
                                 <!--<li><a href="<?= base_url('categories') ?>">Categories <span class="arrow_carrot-down"></span></a>
                                     <ul class="dropdown">
                                         <li><a href="<?= base_url('categories') ?>">Categories</a></li>
@@ -81,8 +81,8 @@
                                         <li><a href="<?= base_url('login') ?>">Login</a></li>
                                     </ul>
                                 </li>-->
-                                <li><a href="<?= base_url('blog') ?>">Our Blog</a></li>
-                                <li><a href="<?= base_url('contacts') ?>">Contacts</a></li>
+                                <li><a href="<?= base_url('/blog') ?>">Our Blog</a></li>
+                                <!--<li><a href="<?= base_url('/contacts') ?>">Contacts</a></li>-->
                             </ul>
                         </nav>
                     </div>
